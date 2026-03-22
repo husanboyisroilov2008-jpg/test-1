@@ -17,9 +17,9 @@ from telegram.ext import Application, CommandHandler, ContextTypes
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("husanboy-telegram-bot")
 
-BOT_TOKEN = os.getenv("8648606490:AAGbSKI4FsIR6rC6yQAvKYYJtejgyxYUma4", "")
-WEBAPP_URL = os.getenv("https://husanboyphoto.netlify.app/", "")
-ALLOWED_ORIGINS = [item.strip() for item in os.getenv("ALLOWED_ORIGINS", "*").split(",") if item.strip()] or ["*"]
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
+WEBAPP_URL = os.getenv("WEBAPP_URL", "")
+ALLOWED_ORIGINS = [item.strip() for item in os.getenv("ALLOWED_ORIGINS", "").split(",") if item.strip()]
 
 app = FastAPI(title="Husanboy Telegram Bot API", version="1.0.0")
 app.add_middleware(
